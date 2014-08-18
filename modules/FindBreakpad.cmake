@@ -6,7 +6,7 @@ NAMES
 	libbreakpad_client
 PATHS
 	${PTT_PUBLISH_LIB}
-	${CMAKE_CURRENT_SOURCE_DIR}/breakpad
+	${CMAKE_SOURCE_DIR}/breakpad
 	/usr/lib
 	/usr/local/lib
 	$ENV{BREAKPAD_ROOT}
@@ -19,7 +19,7 @@ NAMES
 	breakpad_client.lib
 PATHS
 	${PTT_PUBLISH_LIB}
-	${CMAKE_CURRENT_SOURCE_DIR}/breakpad
+	${CMAKE_SOURCE_DIR}/breakpad
 	/usr/lib
 	/usr/local/lib
 	$ENV{BREAKPAD_ROOT}
@@ -32,7 +32,7 @@ NAMES
 	libbreakpad
 PATHS
 	${PTT_PUBLISH_LIB}
-	${CMAKE_CURRENT_SOURCE_DIR}/breakpad
+	${CMAKE_SOURCE_DIR}/breakpad
 	/usr/lib
 	/usr/local/lib
 	$ENV{BREAKPAD_ROOT}
@@ -45,7 +45,7 @@ NAMES
 	breakpad.lib
 PATHS
 	${PTT_PUBLISH_LIB}
-	${CMAKE_CURRENT_SOURCE_DIR}/breakpad
+	${CMAKE_SOURCE_DIR}/breakpad
 	/usr/lib
 	/usr/local/lib
 	$ENV{BREAKPAD_ROOT}
@@ -58,7 +58,7 @@ NAMES
 	client/windows/handler/exception_handler.h
 PATHS
 	${PTT_PUBLISH_INC}
-	${CMAKE_CURRENT_SOURCE_DIR}/breakpad/src
+	${CMAKE_SOURCE_DIR}/breakpad/src
 	$ENV{BREAKPAD_ROOT}/src
 	$ENV{BREAKPAD_ROOT}
 )

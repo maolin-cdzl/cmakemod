@@ -1,31 +1,66 @@
 set( GPerfTools_FOUND 0 )
 
-find_library( GPerfTools_LIBRARY
+
+find_library( tcmalloc_LIBRARY
 NAMES
 	tcmalloc
-	tcmalloc_minimal
 	libtcmalloc
+PATHS
+	/usr/lib
+	/usr/local/lib
+	$ENV{GPERFTOOLS}
+	$ENV{GPERFTOOLS}/lib
+)
+
+find_library( tcmalloc_LIBRARY_STATIC
+NAMES
+	libtcmalloc.a
+	tcmalloc.lib
+PATHS
+	/usr/lib
+	/usr/local/lib
+	$ENV{GPERFTOOLS}
+	$ENV{GPERFTOOLS}/lib
+)
+
+find_library( tcmalloc_minimal_LIBRARY
+NAMES
+	tcmalloc_minimal
 	libtcmalloc_minimal
 PATHS
-	${PTT_PUBLISH_LIB}
-	${PTT_PUBLISH_LIB}/Release
 	/usr/lib
 	/usr/local/lib
 	$ENV{GPERFTOOLS}
 	$ENV{GPERFTOOLS}/lib
 )
 
-find_library( GPerfTools_LIBRARY_STATIC
+find_library( tcmalloc_minimal_LIBRARY_STATIC
 NAMES
-	libtcmalloc_and_profiler.a
-	libtcmalloc.a
 	libtcmalloc_minimal.a
-	tcmalloc_and_profiler.lib
-	tcmalloc.lib
 	tcmalloc_minimal.lib
 PATHS
-	${PTT_PUBLISH_LIB}
-	${PTT_PUBLISH_LIB}/Release
+	/usr/lib
+	/usr/local/lib
+	$ENV{GPERFTOOLS}
+	$ENV{GPERFTOOLS}/lib
+)
+
+find_library( tcmalloc_and_profiler_LIBRARY
+NAMES
+	tcmalloc_and_profiler
+	libtcmalloc_and_profiler
+PATHS
+	/usr/lib
+	/usr/local/lib
+	$ENV{GPERFTOOLS}
+	$ENV{GPERFTOOLS}/lib
+)
+
+find_library( tcmalloc_and_profiler_LIBRARY_STATIC
+NAMES
+	libtcmalloc_and_profiler.a
+	tcmalloc_and_profiler.lib
+PATHS
 	/usr/lib
 	/usr/local/lib
 	$ENV{GPERFTOOLS}
@@ -33,10 +68,10 @@ PATHS
 )
 
 
-if( GPerfTools_LIBRARY )
+if( tcmalloc_LIBRARY )
 	set(GPerfTools_FOUND 1)
-else( GPerfTools_LIBRARY )
+else( tcmalloc_LIBRARY )
 	message(FATAL_ERROR "Count not find GPerfTools library!")
-endif( GPerfTools_LIBRARY )
+endif( tcmalloc_LIBRARY )
 
-mark_as_advanced( GPerfTools_Found GPerfTools_LIBRARY GPerfTools_LIBRARY_STATIC)
+mark_as_advanced( GPerfTools_Found tcmalloc_LIBRARY tcmalloc_LIBRARY_STATIC tcmalloc_minimal_LIBRARY tcmalloc_minimal_LIBRARY tcmalloc_and_profiler_LIBRARY tcmalloc_and_profiler_LIBRARY_STATIC )
