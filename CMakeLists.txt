@@ -13,7 +13,7 @@ if (NOT DUMP_SYMS_TOOLS)
 endif()
 
 set(BIN_FILES install_symbols.py)
-set(MOD_FILES CMakePCH.cmake CMakeSymbols.cmake CMakeProtobuf.cmake CMakeStdOpt.cmake)
+set(MOD_FILES CMakePCH.cmake CMakeSymbols.cmake CMakeProtobuf.cmake CMakeStdOpt.cmake CMakeAndroid.cmake)
 
 install(PROGRAMS ${BIN_FILES} DESTINATION /usr/local/bin)
 
