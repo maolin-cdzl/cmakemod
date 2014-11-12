@@ -81,7 +81,7 @@ function(build_pb_c_sources HEADER_DIR SOURCE_DIR SRCS HDRS)
 	#	COMMAND ${CMAKE_COMMAND} -E remove -f ${SRCS} ${HDRS})
 endfunction()
 
-function(build_pb_c_ng_sources HEADER_DIR SOURCE_DIR SRCS HDRS)
+function(build_pb_cm_sources HEADER_DIR SOURCE_DIR SRCS HDRS)
 	if(NOT ARGN)
 		message(SEND_ERROR "Error: PROTOBUF_GENERATE_CPP() called without any proto files")
 		return()
@@ -128,7 +128,7 @@ function(build_pb_c_ng_sources HEADER_DIR SOURCE_DIR SRCS HDRS)
 		add_custom_command(
 			OUTPUT "/tmp/${FIL_WE}.pb-c.c"
 			"/tmp/${FIL_WE}.pb-c.h"
-			COMMAND  protoc-c-ng
+			COMMAND  protoc-cm
 			ARGS --c_out /tmp ${_protobuf_include_path} ${ABS_FIL}
 			DEPENDS ${ABS_FIL}
 			COMMENT "Running C protocol buffer compiler(without global vars) on ${FIL}"
