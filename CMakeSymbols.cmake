@@ -14,7 +14,7 @@ function(add_symbols proj)
 	#install(CODE "execute_process(COMMAND install_symbols.py ${PROJ_TARGET}.sym ${CMAKE_INSTALL_PREFIX}/symbols)")
 	add_custom_command(TARGET ${proj} POST_BUILD
 		COMMAND dump_syms $<TARGET_FILE:${proj}> > $<TARGET_FILE:${proj}>.sym
-		WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/symbols
+		WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
 		COMMENT "create symbols for ${proj}"
 		)
 endfunction(add_symbols)
