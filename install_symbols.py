@@ -41,7 +41,7 @@ def prepare_sym(sympath,destpath):
     if os.path.isfile(targetfile):
         os.remove(targetfile)
 
-    shutil.move(sympath,targetfile)
+    shutil.copy(sympath,targetfile)
     return True
 
 
