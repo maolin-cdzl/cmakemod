@@ -4,8 +4,8 @@
 
 #CMAKE_FORCE_C_COMPILER( clang CLang )
 #CMAKE_FORCE_CXX_COMPILER ( clang++ CLang )
-SET(CMAKE_C_COMPILER "/usr/local/bin/clang")
-SET(CMAKE_CXX_COMPILER "/usr/local/bin/clang++")
+SET(CMAKE_C_COMPILER "/usr/bin/clang")
+SET(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 #SET(CMAKE_RANLIB "llvm-ranlib" CACHE INTERNAL STRING)
 #SET(CMAKE_AR "llvm-ar" CACHE INTERNAL STRING)
 #SET(CMAKE_OBJDUMP "llvm-objdump" CACHE INTERNAL STRING)
